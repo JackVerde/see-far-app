@@ -1,40 +1,25 @@
 import 'package:flutter/material.dart';
+//import 'package:provider/provider.dart';
+
+//import 'package:seefar_mobile_app/services/auth.dart';
+//import 'package:seefar_mobile_app/models/user.dart';
+import 'package:seefar_mobile_app/screens/wrapper.dart';
+import 'package:seefar_mobile_app/shared/seefar_theme.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'See Far',
-      theme: ThemeData(
-        primarySwatch: Colors.green
-      ),
-      home: MyHomePage(title: 'See Far Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-        ),
-      ),
-    );
+    //return StreamProvider<User>.value(
+      //value: AuthService().user,
+      return MaterialApp(
+        //child: MaterialApp(
+        title: 'Seefar Mobile App',
+        theme: basicTheme(),
+        home: Wrapper(),
+      );
+    //);
   }
 }
